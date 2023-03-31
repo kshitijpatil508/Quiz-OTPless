@@ -27,7 +27,7 @@
         </ul>
 
         <div id="otpless"></div>
-        <button id="start_Quiz" class="hidden" onclick="startQuiz()">
+        <button id="start_Quiz"  onclick="startQuiz()">
           Start Quiz
         </button>
       </div>
@@ -123,9 +123,9 @@
         var waName = otplessUser.waName;
         var waNumber = otplessUser.waNumber;
         // Signup/signin the user and redirect to next page
-        // document.getElementById("otpless").classList.add("hidden");
+        document.getElementById("otpless")..style.display = none;
 
-        document.getElementById("startQuiz").classList.remove("hidden");
+        document.getElementById("startQuiz").style.display = block;
       }
     </script>
     <script src="script.js"></script>
