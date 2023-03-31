@@ -13,7 +13,7 @@
     <section class="main">
       <!-- Welcome page start -->
       <div class="welcome_page" id="welcomePage">
-        <h1>Hi! Welcome to Quiz</h1>
+        <h1 id = "hello">Hi! Welcome to Quiz</h1>
 
         <h2>Instructions:</h2>
         <ul>
@@ -123,6 +123,8 @@
         var waName = otplessUser.waName;
         var waNumber = otplessUser.waNumber;
         // Signup/signin the user and redirect to next page
+        Hi! Welcome to Quiz
+        document.getElementById("hello").innerText  = `Hi! ${waName} Welcome to Quiz`;
         document.getElementById("otpless").style.display = "none";
 
         document.getElementById("start_Quiz").style.display = "block";
