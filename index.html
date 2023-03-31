@@ -13,8 +13,18 @@
     <section class="main">
       <!-- Welcome page start -->
       <div class="welcome_page" id="welcomePage">
-        <br /><br />
-        <h1>Please Login to attempt the Quiz</h1>
+        <h1>Hi! Welcome to Quiz</h1>
+
+        <h2>Instructions:</h2>
+        <ul>
+          <li>Each Question carries 10 Marks</li>
+          <li>Each Question is compulsary</li>
+          <li>Submit Button will not work unless option is selected</li>
+          <li>Once Submitted then answer cannot be changed</li>
+          <li>
+            Next Question will not appear until current question is Attempted
+          </li>
+        </ul>
 
         <div id="otpless"></div>
         <button id="start_Quiz" class="hidden" onclick="startQuiz()">
@@ -113,22 +123,9 @@
         var waName = otplessUser.waName;
         var waNumber = otplessUser.waNumber;
         // Signup/signin the user and redirect to next page
-        
-        document.getElementById("welcomePage").innerHTML = `
-        <h1>Hi! ${waName} Welcome to Quiz </h1>
+        // document.getElementById("otpless").classList.add("hidden");
 
-        <h2>Instructions:</h2>
-        <ul>
-          <li>Each Question carries 10 Marks</li>
-          <li>Each Question is compulsary</li>
-          <li>Submit Button will not work unless option is selected</li>
-          <li>Once Submitted then answer cannot be changed</li>
-          <li>
-            Next Question will not appear until current question is Attempted
-          </li>
-        </ul>
-        
-        `;
+        document.getElementById("startQuiz").classList.remove("hidden");
       }
     </script>
     <script src="script.js"></script>
