@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <!--         <div class="score">Score: <span id="score_count">0</span></div>
+ -->
+  <body>
+    <section class="main">
+      <!-- Welcome page start -->
+      <div class="welcome_page" id="welcomePage">
+        <br /><br />
+        <h1>Please Login to attempt the Quiz</h1>
+
+        <div id="otpless"></div>
+        <button id="start_Quiz" class="hidden" onclick="startQuiz()">
+          Start Quiz
+        </button>
+      </div>
+
+      <!-- Welcome page ends -->
+      <div class="container inactive" id="quiz_page">
+        <div class="left">
+          <div class="question_section">
+            <h2 id="question_no">Question No. 1</h2>
+            <br /><br />
+            <h3 id="questionBox">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit Debitis?
+            </h3>
+          </div>
+          <div class="score_section">
+            <div class="score_info">
+              <div class="score_right">
+                <div>Total</div>
+                <div>Attempted</div>
+                <div>Correct</div>
+                <div>Incorrect</div>
+              </div>
+
+              <div class="score_left">
+                <div id="total">: 0</div>
+                <div id="attempted">: 0</div>
+                <div id="correct_answer">: 0</div>
+                <div id="wrong_answer">: 0</div>
+              </div>
+            </div>
+            <div class="score">Score: <span id="score_count">0</span></div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="option_section">
+            <div class="col box" id="first_option">
+              <input
+                name="option"
+                type="radio"
+                id="first"
+                value="a"
+                class="quiz_options"
+                required
+              />
+              <label for="first">Option 1</label>
+            </div>
+
+            <div class="col box" id="second_option">
+              <input
+                name="option"
+                type="radio"
+                id="second"
+                value="b"
+                class="quiz_options"
+                required
+              />
+              <label for="second">Option 2</label>
+            </div>
+            <div class="col box" id="third_option">
+              <input
+                name="option"
+                type="radio"
+                id="third"
+                value="c"
+                class="quiz_options"
+                required
+              />
+              <label for="third">Option 3</label>
+            </div>
+            <div class="col box" id="fourth_option">
+              <input
+                name="option"
+                type="radio"
+                id="fourth"
+                value="d"
+                class="quiz_options"
+                required
+              />
+              <label for="fourth">Option 4</label>
+            </div>
+          </div>
+          <div class="button_section">
+            <button id="submit" disabled>Submit</button>
+            <button disabled id="next">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="https://otpless.com/auth.js"></script>
+    <!-- Get user's whatsapp number and name -->
+    <script type="text/javascript">
+      function otpless(otplessUser) {
+        var waName = otplessUser.waName;
+        var waNumber = otplessUser.waNumber;
+        // Signup/signin the user and redirect to next page
+        document.getElementById("otpless").classList.add("hidden");
+
+        document.getElementById("startQuiz").classList.remove("hidden");
+
+        document.getElementById("welcomePage").innerHTML = `
+        <h1>Hi! ${waName} Welcome to Quiz </h1>
+
+        <h2>Instructions:</h2>
+        <ul>
+          <li>Each Question carries 10 Marks</li>
+          <li>Each Question is compulsary</li>
+          <li>Submit Button will not work unless option is selected</li>
+          <li>Once Submitted then answer cannot be changed</li>
+          <li>
+            Next Question will not appear until current question is Attempted
+          </li>
+        </ul>
+        
+        `;
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
